@@ -10,7 +10,8 @@ import {
     Trello,
     BrainCircuit,
     Crosshair,
-    Settings
+    Settings,
+    ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -29,9 +30,18 @@ export function Sidebar() {
 
     return (
         <div className="w-64 h-full bg-background border-r border-border flex flex-col uppercase tracking-wider text-xs">
-            <div className="p-4 border-b border-border flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="font-bold tracking-widest text-primary">UPM // 0.1</span>
+            <div className="p-4 border-b border-border flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="font-bold tracking-widest text-primary">UPM // 0.1</span>
+                </div>
+                <div className="p-2 border border-border bg-muted/20 rounded-sm flex items-center justify-between group cursor-pointer hover:bg-muted/40 transition-all">
+                    <div className="flex flex-col">
+                        <span className="text-[10px] text-muted-foreground uppercase leading-none mb-1">Active Entity</span>
+                        <span className="text-[11px] font-bold leading-none">ANTIGRAVITY BOOKS</span>
+                    </div>
+                    <ChevronRight className="w-3 h-3 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
             </div>
 
             <div className="flex-1 py-4 flex flex-col gap-1 px-2">
