@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import {
     ArrowRight, Building2, ShoppingCart, CreditCard, Cpu,
@@ -8,12 +8,12 @@ import {
     Code2, ChevronRight, Globe, Target, Rocket
 } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
         opacity: 1,
         y: 0,
-        transition: { delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+        transition: { delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
     }),
 };
 
