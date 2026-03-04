@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/Sidebar";
+import { Navigation } from "@/components/Navigation";
 
-const sans = Inter({
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const mono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Unicorn Probability Maximizer OS",
-  description: "Founder Command System",
+  title: "FounderOS — The Billionaire Founder Operating System",
+  description:
+    "The real routines, habits, and startup models used by unicorn founders to build billion-dollar companies. Based on analysis of 200+ unicorn founders.",
 };
 
 export default function RootLayout({
@@ -24,16 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${sans.variable} ${mono.variable} antialiased font-sans bg-background text-foreground`}
-      >
-        <div className="flex h-screen overflow-hidden text-sm w-full">
-          <Sidebar />
-          <main className="flex-1 overflow-y-auto bg-background/95 scrollbar-hide">
-            {children}
-          </main>
-        </div>
+    <html lang="en">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <Navigation />
+        <main>{children}</main>
       </body>
     </html>
   );
